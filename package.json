@@ -1,0 +1,23 @@
+{
+  "name": "router-config-express",
+  "version": "1.0.0",
+  "description": "practise express with routing,params and postgres",
+  "main": "elephantsql.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanessasti/router-config-express.git"
+  },
+  "author": "vanesssti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vanessasti/router-config-express/issues"
+  },
+  "homepage": "https://github.com/vanessasti/router-config-express#readme",
+  "dependencies": {
+    "nodemon": "^2.0.19",
+    "pg": "^8.7.3"
+  }
+}

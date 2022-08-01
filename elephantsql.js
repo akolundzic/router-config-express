@@ -2,6 +2,8 @@ const path = require("path");
 const express = require("express");
 const app = express();
 const PORT = 8000;
+const test = "test";
+const pg = require("pg");
 app.use(express.static(__dirname + "/public/stylesheets"));
 const head_html = `<!DOCTYPE html>
   <html lang="en">
