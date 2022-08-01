@@ -1,0 +1,14 @@
+li {
+  list-style-type: none;
+}
+.btn-info {
+  border: rgb(123, 145, 145) 2px;
+  background-color: rgb(197, 234, 255);
+  margin-top: 2rem;
+  width: 20rem;
+  justify-content: center;
+}
+img {
+  width: 30vw;
+  height: 30vh;
+}
