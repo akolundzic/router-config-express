@@ -21,7 +21,7 @@ const head_html = `<!DOCTYPE html>
     <body>`;
 const bottom_html = `</body>
      </html>`;
-const pg = require("pg");
+
 app.get("/", function (req, res) {
   res.send(`${head_html}<h1>Welcome</h1>${bottom_html}`);
 });
@@ -44,49 +44,52 @@ const conString =
   "postgres://ibkugajb:aKs7NUvnZrMFIbYSaH95nHRApx0k_OGB@rogue.db.elephantsql.com/ibkugajb"; //Can be found in the Details page
 const client = new pg.Client(conString);
 
-client.connect(function (err) {
-  if (err) {
-    return console.error("could not connect to postgres", err);
-  }
-  client.query(sql_create, function (err, result) {
-    if (err) {
-      return console.error("error running query", err);
-    }
-    console.log(result.rows);
-    // >> output: 2018-08-23T14:02:57.117Z
-    // client.end();
-  });
-  client.query(sql_insert, (err, result) => {
-    if (err) {
-      return console.error("Error inserting data into base", err);
-    }
-    console.log("Successful creation of 3 Users");
-  });
+app.get("/", (req, res) => {
+  res.send("TEST");
 });
-//---get reques /Users-------
-app.get("/Users", (req, res) => {
-  client.query(sql, (err, data) => {
-    if (err) {
-      console.log(404);
-    }
-    res.send(
-      `${head_html}
-        <div class="container text-center mt-5">
-          <h1>Userlist</h1>
-             ${data.rows.map(
-               (obj) =>
-                 `<div>
-                <a href="/Users/${obj.id}">
-                  <button class="btn btn-info"> ${obj.firstname} ${obj.surname}</button>
-                </a>
-              </div>
-              `
-             )}
-        ${bottom_html}`
-    );
-    // res.send("User", { model: data.rows });
-  });
-});
+// client.connect(function (err) {
+//   if (err) {
+//     return console.error("could not connect to postgres", err);
+//   }
+//   client.query(sql_create, function (err, result) {
+//     if (err) {
+//       return console.error("error running query", err);
+//     }
+//     console.log(result.rows);
+//     // >> output: 2018-08-23T14:02:57.117Z
+//     // client.end();
+//   });
+//   client.query(sql_insert, (err, result) => {
+//     if (err) {
+//       return console.error("Error inserting data into base", err);
+//     }
+//     console.log("Successful creation of 3 Users");
+//   });
+// });
+// //---get reques /Users-------
+// app.get("/Users", (req, res) => {
+//   client.query(sql, (err, data) => {
+//     if (err) {
+//       console.log(404);
+//     }
+//     res.send(
+//       `${head_html}
+//         <div class="container text-center mt-5">
+//           <h1>Userlist</h1>
+//              ${data.rows.map(
+//                (obj) =>
+//                  `<div>
+//                 <a href="/Users/${obj.id}">
+//                   <button class="btn btn-info"> ${obj.firstname} ${obj.surname}</button>
+//                 </a>
+//               </div>
+//               `
+//              )}
+//         ${bottom_html}`
+//     );
+//     // res.send("User", { model: data.rows });
+//   });
+// });
 
 //-----------Server handler ------
 // module.exports = client.connect;

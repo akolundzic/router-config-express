@@ -4,7 +4,12 @@
   "description": "practise express with routing,params and postgres",
   "main": "elephantsql.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node elephantsql.js"
+  },
+  "engines": {
+    "npm": "8.13.2",
+    "node": "v16.15.1"
   },
   "repository": {
     "type": "git",
@@ -17,7 +22,9 @@
   },
   "homepage": "https://github.com/vanessasti/router-config-express#readme",
   "dependencies": {
+    "heroku": "^7.60.2",
     "nodemon": "^2.0.19",
     "pg": "^8.7.3"
-  }
+  },
+  "devDependencies": {}
 }
