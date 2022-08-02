@@ -1,7 +1,7 @@
 const path = require("path");
 const express = require("express");
 const app = express();
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 const test = "test";
 const pg = require("pg");
 app.use(express.static(__dirname + "/public/stylesheets"));
@@ -44,9 +44,6 @@ const conString =
   "postgres://ibkugajb:aKs7NUvnZrMFIbYSaH95nHRApx0k_OGB@rogue.db.elephantsql.com/ibkugajb"; //Can be found in the Details page
 const client = new pg.Client(conString);
 
-app.get("/", (req, res) => {
-  res.send("TEST");
-});
 // client.connect(function (err) {
 //   if (err) {
 //     return console.error("could not connect to postgres", err);
