@@ -1,1 +1,1 @@
-web: web npm start
+node elephantsql.js

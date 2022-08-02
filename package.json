@@ -7,10 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node elephantsql.js"
   },
-  "engines": {
-    "npm": "8.13.2",
-    "node": "v16.15.1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vanessasti/router-config-express.git"
